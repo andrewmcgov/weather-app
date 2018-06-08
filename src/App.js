@@ -10,42 +10,40 @@ class App extends Component {
 
     this.state = {
       cityID: 6094817,
-      current: {}
+      current: {},
+      forecast: {}
     };
   }
   async componentDidMount() {
-    // let threeHourData = await fetch(
-    //   `http://api.openweathermap.org/data/2.5/forecast?id=6094817&APPID=${
-    //     process.env.REACT_APP_WEATHER_API_KEY
-    //   }`
-    // );
-    // threeHourData = await threeHourData.json();
     this.getWeather(6094817);
   }
 
-  async getWeather(cityID) {
-    console.log("getWeather is running");
-    let current = await fetch(
+  getWeather = cityID => {
+    let current = fetch(
       `http://api.openweathermap.org/data/2.5/weather?id=${cityID}&APPID=${
         process.env.REACT_APP_WEATHER_API_KEY
       }&units=metric`
-    );
+    ).then(data => data.json());
 
-    current = await current.json();
-    console.log(current);
+    let forecast = fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?id=${cityID}&APPID=${
+        process.env.REACT_APP_WEATHER_API_KEY
+      }&units=metric`
+    ).then(data => data.json());
 
-    this.setState({ current });
-  }
+    Promise.all([current, forecast]).then(data => {
+      current = data[0];
+      forecast = data[1];
+      this.setState({ current, forecast });
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <div className="top-section">
-          <Hero
-            current={this.state.current}
-            getWeather={this.getWeather.bind(this)}
-          />
-          <CardBanner />
+          <Hero current={this.state.current} getWeather={this.getWeather} />
+          <CardBanner forecast={this.state.forecast} />
         </div>
       </div>
     );
