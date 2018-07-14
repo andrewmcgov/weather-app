@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
 import "./WeatherCard.css";
 
 class WeatherCard extends React.Component {
@@ -11,7 +12,7 @@ class WeatherCard extends React.Component {
     return (
       <div className="weather-card">
         <span className="weather-card__time">{time}</span>
-        <span className="weather-card__condition">{condition}</span>
+        <WeatherIcon condition={condition} size="small" />
         <span className="weather-card__temp">{`${temp}°`}</span>
       </div>
     );

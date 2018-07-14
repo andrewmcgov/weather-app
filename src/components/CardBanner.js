@@ -10,8 +10,8 @@ class CardBanner extends React.Component {
       <div className="card-banner">
         {forecasts.map(forecast => {
           return (
-            <div className="weather-card__container">
-              <WeatherCard key={forecast.dt} forecast={forecast} />
+            <div className="weather-card__container" key={forecast.dt}>
+              <WeatherCard forecast={forecast} />
             </div>
           );
         })}

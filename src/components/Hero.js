@@ -1,5 +1,6 @@
 import React from "react";
 import CitySelect from "./CitySelect";
+import WeatherIcon from "./WeatherIcon";
 import "./Hero.css";
 
 class Hero extends React.Component {
@@ -23,9 +24,9 @@ class Hero extends React.Component {
       <div className="hero">
         <CitySelect getWeather={this.props.getWeather} />
         <div className="hero__main">
-          <div className="hero__block hero__date">
+          <div className="hero__block hero__weather">
             <p className="hero__temp">{`${temp}°`}</p>
-            <p className="hero__condition">{condition}</p>
+            <WeatherIcon condition={condition} size="large" />
           </div>
           <div className="hero__block hero__location">
             <h1 className="hero__city">{name}</h1>

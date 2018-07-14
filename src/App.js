@@ -41,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="top-section">
+        <div className="main-section">
           <Hero current={this.state.current} getWeather={this.getWeather} />
           <CardBanner forecast={this.state.forecast} />
         </div>
