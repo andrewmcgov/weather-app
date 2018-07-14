@@ -20,10 +20,10 @@ li {
   font-weight: 300;
 }
 
-.top-section {
+.main-section {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: scroll;
 }
