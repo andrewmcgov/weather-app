@@ -25,7 +25,7 @@ class Hero extends React.Component {
         <CitySelect getWeather={this.props.getWeather} />
         <div className="hero__main">
           <div className="hero__block hero__weather">
-            <p className="hero__temp">{`${temp}°`}</p>
+            <p className="hero__temp">{temp ? `${temp}°` : ""}</p>
             <WeatherIcon condition={condition} size="large" />
           </div>
           <div className="hero__block hero__location">
