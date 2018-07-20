@@ -1,5 +1,5 @@
 import React from "react";
-import CitySelect from "./CitySelect";
+import CitySearch from "./CitySearch";
 import WeatherIcon from "./WeatherIcon";
 import "./Hero.css";
 
@@ -22,7 +22,7 @@ class Hero extends React.Component {
 
     return (
       <div className="hero">
-        <CitySelect getWeather={this.props.getWeather} />
+        <CitySearch getWeather={this.props.getWeather} />
         <div className="hero__main">
           <div className="hero__block hero__weather">
             <p className="hero__temp">{temp ? `${temp}°` : ""}</p>

@@ -1,0 +1,28 @@
+.city-search {
+  text-align: center;
+}
+.city-search__wrapper {
+  width: 300px;
+  margin: 20px auto;
+  position: relative;
+}
+.city-search__input {
+  font-size: 16px;
+}
+.city-select__results {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  position: fixed;
+  width: 300px;
+}
+.city-select__suggestion {
+  margin-bottom: 3px;
+  background-color: rgba(255, 255, 255, 0.637);
+  color: #000;
+  border-radius: 3px;
+  z-index: 1000;
+}
+.city-select__suggestion:hover {
+  background-color: rgb(255, 255, 255);
+}

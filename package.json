@@ -10,7 +10,7 @@
     "typeface-montserrat": "0.0.54"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER='firefox' react-scripts start",
     "now-start": "serve --single ./build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
