@@ -20,13 +20,13 @@ class App extends Component {
 
   getWeather = cityID => {
     let current = fetch(
-      `http://api.openweathermap.org/data/2.5/weather?id=${cityID}&APPID=${
+      `https://api.openweathermap.org/data/2.5/weather?id=${cityID}&APPID=${
         process.env.REACT_APP_WEATHER_API_KEY
       }&units=metric`
     ).then(data => data.json());
 
     let forecast = fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?id=${cityID}&APPID=${
+      `https://api.openweathermap.org/data/2.5/forecast?id=${cityID}&APPID=${
         process.env.REACT_APP_WEATHER_API_KEY
       }&units=metric`
     ).then(data => data.json());

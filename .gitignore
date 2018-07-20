@@ -11,6 +11,7 @@
 
 # api keys
 .env
+now.json
 
 # misc
 .DS_Store
