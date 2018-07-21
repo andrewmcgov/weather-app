@@ -47,7 +47,7 @@ class CitySearch extends React.Component {
                   key={city.id}
                   onClick={() => this.selectCity(city)}
                 >
-                  {city.name}, {city.id}
+                  {city.name}
                 </li>
               );
             })}
