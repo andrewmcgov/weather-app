@@ -11,6 +11,7 @@
   height: auto;
   fill: #fff;
   filter: drop-shadow(2px 4px 9px rgba(0, 0, 0, 0.38));
+  z-index: 5;
 }
 @media screen and (max-width: 700px) {
   .weatherIcon--wrapper {
@@ -24,4 +25,9 @@
   height: 75px;
   max-height: 100%;
   margin: 0 auto;
+}
+@media screen and (max-width: 700px) {
+  .weatherIcon--wrapper.icon--small svg {
+    height: 50px;
+  }
 }
